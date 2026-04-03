@@ -18,4 +18,4 @@ ollama pull hf.co/unsloth/GLM-4.7-Flash-GGUF:UD-Q4_K_XL
 ollama launch opencode --config
 ```
 
-- Activate use of gratis or paid model in https://opencode.ai/zen to use `opencode Go`
+- Activate for the use of free/paid model in https://opencode.ai/zen to use `opencode Go`
