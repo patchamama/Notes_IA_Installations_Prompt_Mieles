@@ -27,3 +27,7 @@ ollama launch opencode --config
 ### Agent Assistants
 
 - [Portable AI agent skills. One CLI. Every coding assistant.](https://www.npmjs.com/package/@skilly-hand/skilly-hand)
+
+### Improve the search (grep) for information in the documents
+
+- [mgrep: A calm, CLI-native way to semantically grep everything, like code, images, pdfs and more.](https://github.com/mixedbread-ai/mgrep)
