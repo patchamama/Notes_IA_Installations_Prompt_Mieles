@@ -1,5 +1,5 @@
 
-### Instalation
+### Installation
 
 Mac OS X
 
@@ -18,4 +18,12 @@ ollama pull hf.co/unsloth/GLM-4.7-Flash-GGUF:UD-Q4_K_XL
 ollama launch opencode --config
 ```
 
-- Activate for the use of free/paid model in https://opencode.ai/zen to use `opencode Go`
+- Activate for the use of the free/paid model in https://opencode.ai/zen to use `opencode Go`
+
+### Mode save tokens
+
+-  [Caveman: why use many tokens when few do trick](https://github.com/patchamama/caveman)
+
+### Agent Assistants
+
+- [Portable AI agent skills. One CLI. Every coding assistant.](https://www.npmjs.com/package/@skilly-hand/skilly-hand)
