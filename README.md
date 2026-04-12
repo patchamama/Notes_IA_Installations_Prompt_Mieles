@@ -20,6 +20,10 @@ ollama launch opencode --config
 
 - Activate for the use of the free/paid model in https://opencode.ai/zen to use `opencode Go`
 
+### IOS/Android APP to test local models
+
+- Google AI Edge Gallery para modelos locales de Google como Gemma 4.
+
 ### Mode save tokens
 
 -  [Caveman: why use many tokens when few do trick](https://github.com/patchamama/caveman)
