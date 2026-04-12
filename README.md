@@ -28,9 +28,24 @@ ollama launch opencode --config
 
 -  [Caveman: why use many tokens when few do trick](https://github.com/patchamama/caveman)
 
+  Trigger with:
+  /caveman or Codex $caveman
+  "talk like caveman"
+  "caveman mode"
+  "less tokens please"
+  
+  Stop with: "stop caveman" or "normal mode"
+
 ### Agent Assistants
 
 - [Portable AI agent skills. One CLI. Every coding assistant.](https://www.npmjs.com/package/@skilly-hand/skilly-hand)
+
+Command	- Description
+npx skilly-hand install	- Install skills into the current project
+npx skilly-hand detect	- Auto-detect project stack and suggest skills
+npx skilly-hand list	- List all available skills in the catalog
+npx skilly-hand doctor	- Diagnose installation and configuration issues
+npx skilly-hand uninstall	- Remove installed skills
 
 ### Improve the search (grep) for information in the documents
 
