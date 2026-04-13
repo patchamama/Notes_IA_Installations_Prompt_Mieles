@@ -28,6 +28,12 @@ ollama launch opencode --config
 
 -  [Caveman: why use many tokens when few do trick](https://github.com/patchamama/caveman)
 
+Install
+
+```sh
+claude plugin marketplace add JuliusBrussee/caveman && claude plugin install caveman@caveman
+```
+
 Trigger with:
 ```
 /caveman or `Codex $caveman`
