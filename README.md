@@ -24,11 +24,11 @@ ollama launch opencode --config
 
 - Google AI Edge Gallery para modelos locales de Google como Gemma 4.
 
-### 
+### AI Stack (SDD)
 
 - [AI Gentle Stack](https://github.com/Gentleman-Programming/gentle-ai)
 
-- Install
+Install
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
