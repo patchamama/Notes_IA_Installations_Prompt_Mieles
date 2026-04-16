@@ -24,6 +24,16 @@ ollama launch opencode --config
 
 - Google AI Edge Gallery para modelos locales de Google como Gemma 4.
 
+### 
+
+- [AI Gentle Stack](https://github.com/Gentleman-Programming/gentle-ai)
+
+- Install
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
+```
+
 ### Mode save tokens
 
 -  [Caveman: why use many tokens when few do trick](https://github.com/patchamama/caveman)
