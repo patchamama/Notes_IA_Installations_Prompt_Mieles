@@ -237,5 +237,8 @@ https://127.0.0.1 {
 }
 ```
 
-
+Opcional que se puede testear:
+- Compartir GPU de máquina Host con VM
+- Instalar `llama3:8b`
+- Exponer `Ollama Docker` en la red
 
