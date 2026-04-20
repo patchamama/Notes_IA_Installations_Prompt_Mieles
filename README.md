@@ -104,12 +104,17 @@ claude plugin marketplace add JuliusBrussee/caveman && claude plugin install cav
 ```ps
 # Run on the Host — enable nested virtualization
 Set-VMProcessor -VMName "VM_Name" -ExposeVirtualizationExtensions $true
+
 # Shut down the VM completely from the Host
 Stop-VM "VM_Name"
+
 # Restart the VM, then enable the required features inside the VM
 dism /online /enable-feature /featurename:VirtualMachinePlatform /all
 dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all
+
 # Restart VM and verify nested virtualization (success = "The operation completed successfully.")
+
+# Download and install WSL2 Kernel updated:  https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 wsl --set-default-version 2
 ```
 
