@@ -114,7 +114,7 @@ dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all
 
 # Restart VM and verify nested virtualization (success = "The operation completed successfully.")
 
-# Download and install WSL2 Kernel updated:  https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+# Download and install WSL2 Kernel update:  https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 wsl --set-default-version 2
 ```
 
