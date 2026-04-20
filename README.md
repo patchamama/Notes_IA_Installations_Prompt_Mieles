@@ -70,10 +70,12 @@ Stop with: `"stop caveman" or "normal mode"`
 
 - [mgrep: A calm, CLI-native way to semantically grep everything, like code, images, pdfs and more.](https://github.com/mixedbread-ai/mgrep)
 
-### Create Docker Ollama installation with SSL support (reverse ssl proxy)
+### Create Docker Ollama installation with SSL support (reverse ssl proxy) 
+
+- [Script que automatiza toda la instalación de forma interactiva](./deploy-ollama-docker.ps1)
 
 <details>
-  <summary>HyperV Windows Server VM (2022, 2025) + WSL + Docker</summary>
+  <summary>HyperV Windows Server VM (2022, 2025) + WSL + Docker (Manual)</summary>
 
 #### HyperV Windows Server VM (2022, 2025) + WSL + Docker
 
