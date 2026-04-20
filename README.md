@@ -74,6 +74,10 @@ Stop with: `"stop caveman" or "normal mode"`
 
 - [Script que automatiza toda la instalación de forma interactiva](./deploy-ollama-docker.ps1)
 
+> [!NOTE]
+> Para activar en PS la ejecución de scripts es necesario ejecutar este comando:
+> `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
+
 <details>
   <summary>HyperV Windows Server VM (2022, 2025) + WSL + Docker (Manual)</summary>
 
