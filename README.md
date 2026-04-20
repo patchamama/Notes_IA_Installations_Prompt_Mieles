@@ -72,6 +72,8 @@ Stop with: `"stop caveman" or "normal mode"`
 
 ### Create Docker Ollama installation with SSL support (reverse ssl proxy) 
 
+<details>
+  <summary>Installation Script (Automatic) - HyperV Windows Server VM (2022, 2025) + WSL + Docker</summary>
 - [Script que automatiza toda la instalación de forma interactiva](./deploy-ollama-docker.ps1)
 
 > [!NOTE]
@@ -79,9 +81,10 @@ Stop with: `"stop caveman" or "normal mode"`
 > ```ps
 > Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 > ```
-
+</details>
+  
 <details>
-  <summary>HyperV Windows Server VM (2022, 2025) + WSL + Docker (Manual)</summary>
+  <summary>HyperV Windows Server VM (2022, 2025) + WSL + Docker (Manual Installation)</summary>
 
 #### HyperV Windows Server VM (2022, 2025) + WSL + Docker
 
