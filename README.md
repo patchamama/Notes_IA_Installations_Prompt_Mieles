@@ -69,3 +69,55 @@ Stop with: `"stop caveman" or "normal mode"`
 ### Improve the search (grep) for information in the documents
 
 - [mgrep: A calm, CLI-native way to semantically grep everything, like code, images, pdfs and more.](https://github.com/mixedbread-ai/mgrep)
+
+### Create Docker Ollama installation with SSL support (reverse ssl proxy)
+
+#### HyperV Windows Server VM (2022, 2025) + WSL + Docker
+
+Problema: no se puede instalar y configurar Docker pues necesita `Nested virtualization`.
+
+```ps
+# Ejecutar en el Host (activate nested virtualization)
+Set-VMProcessor -VMName "VM_Name" -ExposeVirtualizationExtensions $true
+# Host (apagar completamente la VM
+Stop-VM "VM_Name" 
+# Reiniciar la VM y dentro de la VM activar feautures:
+dism /online /enable-feature /featurename:VirtualMachinePlatform /all
+dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all
+# Reiniciar VM y probar dentro de VM tras reiniciar (`Nested virtualization` OK sí muestra: `The operation completed successfully.`):
+wsl --set-default-version 2
+```
+
+# Instalar y configurar `Docker`
+Una vez instalado y ejecutado `Docker` este hará:
+
+- crear docker-desktop
+- crear docker-desktop-data
+- usar WSL2 internamente
+
+Para comprobar, ejecutar: 
+
+```ps
+wsl -l -v
+```
+
+Debería de salir algo así: 
+
+```
+NAME                   STATE           VERSION
+docker-desktop         Running         2
+```
+
+Test final, ejecuta en el terminal:
+
+```ps
+docker run hello-world
+```
+
+Si funciona:
+
+✔ Docker OK
+✔ WSL2 OK
+✔ listo para Ollama
+
+
