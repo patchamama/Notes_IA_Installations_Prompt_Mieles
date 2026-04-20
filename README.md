@@ -76,6 +76,7 @@ Stop with: `"stop caveman" or "normal mode"`
 
 > [!NOTE]
 > Para activar en PS la ejecución de scripts es necesario ejecutar este comando:
+> 
 > `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
 
 <details>
