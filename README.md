@@ -272,4 +272,8 @@ https://127.0.0.1 {
 - Install `llama3:8b`
 - Expose Ollama Docker on the local network
 
+#### References
+
+- https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
+
 </details>
