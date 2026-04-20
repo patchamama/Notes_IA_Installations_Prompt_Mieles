@@ -116,8 +116,126 @@ docker run hello-world
 
 Si funciona:
 
-✔ Docker OK
-✔ WSL2 OK
-✔ listo para Ollama
+- ✔ Docker OK
+- ✔ WSL2 OK
+- ✔ listo para Ollama
+
+#### Montar Ollama con Docker
+
+```ps
+mkdir C:\ollama-ssl
+cd C:\ollama-ssl
+```
+
+#### Crear `docker-compose.yml`
+
+```ps
+notepad docker-compose.yml
+```
+
+Pegar:
+
+```yaml
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    restart: always
+    volumes:
+      - ollama_data:/root/.ollama
+
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: always
+    ports:
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+    depends_on:
+      - ollama
+
+volumes:
+  ollama_data:
+  caddy_data:
+```
+
+#### Crear `Caddyfile`
+
+```ps
+notepad Caddyfile
+```
+
+> [!NOTE]
+> Asegúrate de que exista el archivo `Caddyfile` sin extensión pues notepad suele en estos casos crear un archivo `Caddyfile.txt` y puedes comprobarlo con `dir c:\ollama-ssl`, sí no existe el archivo `Caddyfile`, puedes crearlo con `rename Caddyfile.txt Caddyfile`. 
+
+Pegar:
+
+```
+https://localhost {
+    reverse_proxy ollama:11434
+    tls internal
+}
+```
+
+O mejor para evitar problemas con encoding UTF-8, pegar en el terminal:
+
+```ps
+@"
+https://localhost {
+    reverse_proxy ollama:11434
+    tls internal
+}
+"@ | Out-File -Encoding utf8 Caddyfile
+```
+
+#### Levantar contenedores y verificar
+
+```ps
+# Levantar contenedor
+docker compose down
+docker compose up -d
+
+# Verificar
+docker ps
+
+# Descargar un modelo ligero en Ollama como `deepseek-r1:1.5b`
+docker exec -it ollama ollama pull deepseek-r1:1.5b
+
+# Descargar e instalar certifiado SSL (crítico para ELO)
+docker exec caddy cat /data/caddy/pki/authorities/local/root.crt > root.crt
+# Instalar certificado en windows
+certutil -addstore -f "ROOT" root.crt
+
+# Test rápido (debe de mostar un json con StatusCode: 200)
+curl https://localhost/api/tags
+```
+
+Finalmente quedaría:
+
+```
+Anbieter:	Ollama
+API-Schlüssel:	ollama
+Modellname:	deepseek-r1:1.5b
+API-Endpunkt:	https://localhost
+```
+
+
+#### Problemas técnicos
+
+- ELO no conecta
+
+Prueba cambiar la url por `https://127.0.0.1` y cambia el contenido de `Caddyfile` a:
+
+```
+https://127.0.0.1 {
+    reverse_proxy ollama:11434
+    tls internal
+}
+```
+
 
 
