@@ -72,6 +72,9 @@ Stop with: `"stop caveman" or "normal mode"`
 
 ### Create Docker Ollama installation with SSL support (reverse ssl proxy)
 
+<details>
+  <summary>HyperV Windows Server VM (2022, 2025) + WSL + Docker</summary>
+
 #### HyperV Windows Server VM (2022, 2025) + WSL + Docker
 
 Problema: no se puede instalar y configurar Docker pues necesita `Nested virtualization`.
@@ -242,3 +245,4 @@ Opcional que se puede testear:
 - Instalar `llama3:8b`
 - Exponer `Ollama Docker` en la red
 
+</details>
