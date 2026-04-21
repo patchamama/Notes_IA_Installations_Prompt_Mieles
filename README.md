@@ -139,7 +139,7 @@ wsl --update
 wsl --set-default-version 2
 ```
 
-#### Install and Configure Docker
+#### Install and Configure Docker ([Docker Desktop Windows Download](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe))
 
 Once Docker Desktop is installed and running, it will:
 
