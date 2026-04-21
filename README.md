@@ -303,3 +303,8 @@ https://127.0.0.1 {
 - https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
 
 </details>
+
+
+#### Agents shippers references
+
+-  [Programar con IA sin Gastar una Fortuna: Minimax M2.7 + OpenCode](https://www.youtube.com/watch?v=Pwp_F8zQbMM)
