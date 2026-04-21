@@ -118,19 +118,24 @@ claude plugin marketplace add JuliusBrussee/caveman && claude plugin install cav
 **Problem:** Docker cannot be installed without `Nested Virtualization` enabled.
 
 ```ps
-# Run on the Host — enable nested virtualization
-Set-VMProcessor -VMName "VM_Name" -ExposeVirtualizationExtensions $true
-
 # Shut down the VM completely from the Host
 Stop-VM "VM_Name"
 
-# Restart the VM, then enable the required features inside the VM
+# Run on the Host — enable nested virtualization
+Set-VMProcessor -VMName "VM_Name" -ExposeVirtualizationExtensions $true
+
+# Start VM completely from the Host
+Start-VM "VM_Name"
+
+# Restart the VM, then enable the required features inside the VM Powershell:
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+Stop-VM "VM_Name"
+Start-VM "VM_Name"
 dism /online /enable-feature /featurename:VirtualMachinePlatform /all
 dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all
 
-# Restart VM and verify nested virtualization (success = "The operation completed successfully.")
-
 # Download and install WSL2 Kernel update:  https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+wsl --update
 wsl --set-default-version 2
 ```
 
