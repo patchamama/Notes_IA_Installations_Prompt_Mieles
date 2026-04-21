@@ -305,6 +305,6 @@ https://127.0.0.1 {
 </details>
 
 
-#### Agents shippers references
+## References
 
 -  [Programar con IA sin Gastar una Fortuna: Minimax M2.7 + OpenCode](https://www.youtube.com/watch?v=Pwp_F8zQbMM)
