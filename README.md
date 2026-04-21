@@ -190,8 +190,6 @@ notepad docker-compose.yml
 Paste:
 
 ```yaml
-version: '3.8'
-
 services:
   ollama:
     image: ollama/ollama
@@ -205,6 +203,7 @@ services:
     container_name: caddy
     restart: always
     ports:
+      - "11443:11434"
       - "443:443"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
@@ -230,7 +229,11 @@ notepad Caddyfile
 Paste:
 
 ```text
-https://localhost {
+{
+    admin off
+}
+
+https://127.0.0.1:11434, https://localhost:11434 {
     reverse_proxy ollama:11434
     tls internal
 }
@@ -240,7 +243,11 @@ Or use PowerShell to avoid UTF-8 encoding issues:
 
 ```ps
 @"
-https://localhost {
+{
+    admin off
+}
+
+https://127.0.0.1:11434, https://localhost:11434 {
     reverse_proxy ollama:11434
     tls internal
 }
