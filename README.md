@@ -16,13 +16,14 @@ curl -fsSL https://claude.ai/install.sh | bash
 winget install --id Git.Git -e --source winget # Or download and install: https://github.com/git-for-windows/git/releases/download/v2.53.0.windows.3/Git-2.53.0.3-64-bit.exe
   [System.Environment]::SetEnvironmentVariable(
   "CLAUDE_CODE_GIT_BASH_PATH",
-  "C:\Users\Armando.Cabrera\AppData\Local\Programs\Git\bin\bash.exe",
+  "~\AppData\Local\Programs\Git\bin\bash.exe",
   "User"
   )
 # or
-$env:CLAUDE_CODE_GIT_BASH_PATH="C:\Users\Armando.Cabrera\AppData\Local\Programs\Git\bin\bash.exe"
+$env:CLAUDE_CODE_GIT_BASH_PATH="~\AppData\Local\Programs\Git\bin\bash.exe"
 echo $env:CLAUDE_CODE_GIT_BASH_PATH
 irm https://claude.ai/install.ps1 | iex
+~\.local\bin\claude.exe
 
 # Install agents (gentle-ai agents and settings) See: https://github.com/Gentleman-Programming/gentle-ai
 curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
