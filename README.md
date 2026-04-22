@@ -23,7 +23,7 @@ ollama launch claude --config
 ```
 
 > [!NOTE]
-> This preview release 0.19 of Ollama accelerates the new Qwen3.5-35B-A3B model, with sampling parameters tuned for coding tasks.
+> This preview release 0.19 of Ollama accelerates the new `Qwen3.5-35B-A3B model`, with sampling parameters tuned for coding tasks.
 > Please make sure you have a Mac with more than 32GB of unified memory.
 
 - Activate free/paid model support at <https://opencode.ai/zen> to use `opencode Go`
