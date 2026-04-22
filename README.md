@@ -137,7 +137,40 @@ claude plugin marketplace add JuliusBrussee/caveman && claude plugin install cav
 ### Prompt formula
 
 <details>
-  <summary>Prompt formula</summary>
+  <summary>Prompting Guide</summary>
+
+Definition: A prompt is an instruction given by a person to a language model or computer program to generate a specific response, answer, or action.
+
+What makes a prompt successful?
+
+
+1. Clarity and precision
+
+A good prompt should be clearly worded.
+
+- Vague: "Analyze the document."
+- More precise: "Analyze the document for contractual risks and summarize them."
+
+2. Context
+
+- The more context a prompt provides, the better the AI can respond. Specify what type of document it is, the expected structure, and what your objective is.
+- "The document is a delivery note in PDF format. Check the document for the vendor number, delivery date, and recipient's address."
+
+3. Roles and perspectives
+
+- AI can be assigned specific roles to control the tone or depth of the response.
+- "You are a DMS expert. Explain to a new user how to archive a document in line with legal requirements."
+
+4. Format specifications
+
+- Specify the format in which you expect the response.
+- "Summarize the document's metadata in a table with the following columns: Field name, Value, and Source."
+
+5. Iteration
+
+A prompt can be improved iteratively or through repetition.
+
+6. Prompt formula
 
 [Role] + [Task] + [Context] + [Objective] + [Format] + [Tone]
 
