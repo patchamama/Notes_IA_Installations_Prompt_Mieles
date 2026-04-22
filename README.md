@@ -12,7 +12,7 @@ ollama
 # Install glm-4.7 flash model
 ollama pull hf.co/unsloth/GLM-4.7-Flash-GGUF:UD-Q4_K_XL
 
-# Inall quen3.5 with Ollama accelerates (ollama > 0.19)
+# Install `quen3.5` with Ollama accelerates (ollama > 0.19), need minimum 32 GB RAM
 ollama run qwen3.5:35b-a3b-coding-nvfp4
 
 # Launch opencode with Ollama integration
