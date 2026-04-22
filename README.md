@@ -12,8 +12,9 @@ ollama
 # Install glm-4.7 flash model
 ollama pull hf.co/unsloth/GLM-4.7-Flash-GGUF:UD-Q4_K_XL
 
-# Install `quen3.5` with Ollama accelerates (ollama > 0.19), need minimum 32 GB RAM
-ollama run qwen3.5:35b-a3b-coding-nvfp4
+# Install `quen3.6` with Ollama accelerates (ollama > 0.19), need minimum 32 GB RAM
+ollama run qwen3.6:35b-a3b-coding-nvfp4
+ollama launch claude --model qwen3.6:35b-a3b-coding-nvfp4  # ollama with claude
 
 # Launch opencode with Ollama integration
 ollama launch opencode --config
@@ -134,7 +135,7 @@ claude plugin marketplace add JuliusBrussee/caveman && claude plugin install cav
 - [mgrep: A calm, CLI-native way to semantically grep everything — code, images, PDFs and more.](https://github.com/mixedbread-ai/mgrep)
 
 
-### Prompt formula
+### Prompting Guide
 
 <details>
   <summary>Prompting Guide</summary>
