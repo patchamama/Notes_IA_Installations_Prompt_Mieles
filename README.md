@@ -94,7 +94,33 @@ claude plugin marketplace add JuliusBrussee/caveman && claude plugin install cav
 
 - [mgrep: A calm, CLI-native way to semantically grep everything — code, images, PDFs and more.](https://github.com/mixedbread-ai/mgrep)
 
----
+
+### Prompt formula
+
+[Role] + [Task] + [Context] + [Objective] + [Format] + [Tone]
+
+Example:
+
+- Role: You are an experienced data analyst.
+- Task: Analyze the following sales figures and identify the trends.
+- Objective: Identify patterns and provide well-supported conclusions to inform management decisions.
+
+Format:
+
+- Numbered list of analysis steps
+- Final summary (max. 5 sentences)
+
+Quality criteria:
+
+- Only data-based statements
+- Clear distinction between observation and interpretation
+- Concise and precise wording
+
+Limitations:
+
+- No assumptions without a data basis
+- No speculation about external factors
+
 
 ### Docker Ollama with SSL Support (Reverse SSL Proxy)
 
