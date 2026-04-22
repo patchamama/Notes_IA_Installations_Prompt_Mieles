@@ -12,6 +12,9 @@ ollama
 # Install glm-4.7 flash model
 ollama pull hf.co/unsloth/GLM-4.7-Flash-GGUF:UD-Q4_K_XL
 
+# Inall quen3.5 with Ollama accelerates (ollama > 0.19)
+ollama run qwen3.5:35b-a3b-coding-nvfp4
+
 # Launch opencode with Ollama integration
 ollama launch opencode --config
 
@@ -19,7 +22,15 @@ ollama launch opencode --config
 ollama launch claude --config
 ```
 
+> [!NOTE]
+> This preview release 0.19 of Ollama accelerates the new Qwen3.5-35B-A3B model, with sampling parameters tuned for coding tasks.
+> Please make sure you have a Mac with more than 32GB of unified memory.
+
 - Activate free/paid model support at <https://opencode.ai/zen> to use `opencode Go`
+
+### LLamaCPP (pendiente)
+
+- Fuente: https://github.com/ggml-org/llama.cpp
 
 ### Claude Code
 
@@ -369,6 +380,12 @@ https://127.0.0.1 {
 </details>
 
 
+### TODO
+
+- Docker + SSL con llamaCPP optimizado para versión de linux con soporte de GPU Nvidia y otros. 
+
 ## References
 
 -  [Programar con IA sin Gastar una Fortuna: Minimax M2.7 + OpenCode](https://www.youtube.com/watch?v=Pwp_F8zQbMM)
+-  [Qwen3-Coder-Next: The Complete 2026 Guide to Running Powerful AI Coding Agents Locally](https://dev.to/sienna/qwen3-coder-next-the-complete-2026-guide-to-running-powerful-ai-coding-agents-locally-1k95)
+-  [Ollama is now powered by MLX on Apple Silicon in preview](https://ollama.com/blog/mlx)   
