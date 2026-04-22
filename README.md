@@ -97,6 +97,9 @@ claude plugin marketplace add JuliusBrussee/caveman && claude plugin install cav
 
 ### Prompt formula
 
+<details>
+  <summary>Prompt formula</summary>
+
 [Role] + [Task] + [Context] + [Objective] + [Format] + [Tone]
 
 Example:
@@ -120,7 +123,7 @@ Limitations:
 
 - No assumptions without a data basis
 - No speculation about external factors
-
+</details>
 
 ### Docker Ollama with SSL Support (Reverse SSL Proxy)
 
