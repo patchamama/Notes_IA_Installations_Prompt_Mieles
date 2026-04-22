@@ -2,14 +2,29 @@
 
 ## Installation
 
+### Ollama
+
 ```sh
 # MacOSX
 brew install ollama
 ollama
-brew install opencode
-opencode
 
-# Linux
+# Install glm-4.7 flash model
+ollama pull hf.co/unsloth/GLM-4.7-Flash-GGUF:UD-Q4_K_XL
+
+# Launch opencode with Ollama integration
+ollama launch opencode --config
+
+# Launch claude with Ollama integration
+ollama launch claude --config
+```
+
+- Activate free/paid model support at <https://opencode.ai/zen> to use `opencode Go`
+
+### Claude Code
+
+```sh
+# Linux & MacOSX
 curl -fsSL https://claude.ai/install.sh | bash
 
 # Windows PS
@@ -24,18 +39,31 @@ $env:CLAUDE_CODE_GIT_BASH_PATH="~\AppData\Local\Programs\Git\bin\bash.exe"
 echo $env:CLAUDE_CODE_GIT_BASH_PATH
 irm https://claude.ai/install.ps1 | iex
 ~\.local\bin\claude.exe
-
-# Install agents (gentle-ai agents and settings) See: https://github.com/Gentleman-Programming/gentle-ai
-curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
-
-# Install glm-4.7 flash model
-ollama pull hf.co/unsloth/GLM-4.7-Flash-GGUF:UD-Q4_K_XL
-
-# Launch opencode with Ollama integration
-ollama launch opencode --config
 ```
 
-- Activate free/paid model support at <https://opencode.ai/zen> to use `opencode Go`
+### OpenCode
+
+```sh
+brew install opencode
+opencode
+```
+
+### Gemini
+
+```sh
+# Global
+npm install -g @google/gemini-cli # gemini
+
+# MacOSX
+brew install gemini-cli # gemini
+```
+
+
+### Install agents (gentle-ai agents and settings) See: https://github.com/Gentleman-Programming/gentle-ai
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
+```
 
 ---
 
