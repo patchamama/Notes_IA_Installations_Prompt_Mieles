@@ -13,6 +13,10 @@ ollama
 ollama pull hf.co/unsloth/GLM-4.7-Flash-GGUF:UD-Q4_K_XL
 
 # Install `quen3.6` with Ollama accelerates (ollama > 0.19), need minimum 32 GB RAM
+# See models updated: https://ollama.com/library/qwen3.6
+ollama run qwen3.6:27b-coding-nvfp4
+ollama launch claude --model qwen3.6:27b-coding-nvfp4  # ollama with claude
+
 ollama run qwen3.6:35b-a3b-coding-nvfp4
 ollama launch claude --model qwen3.6:35b-a3b-coding-nvfp4  # ollama with claude
 
@@ -55,9 +59,18 @@ irm https://claude.ai/install.ps1 | iex
 
 ### OpenCode
 
+
+- MacOSX
+
 ```sh
 brew install opencode
 opencode
+```
+
+- Linux/MacOSX/Windows
+
+```sh
+curl -fsSL https://opencode.ai/install | bash
 ```
 
 ### Gemini
