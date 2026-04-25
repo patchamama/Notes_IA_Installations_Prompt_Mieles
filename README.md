@@ -430,7 +430,7 @@ https://127.0.0.1 {
 ### TODO
 
 - Docker + SSL con llamaCPP optimizado para versión de linux con soporte de GPU Nvidia y otros.
-- See model OpenAI Privacy Filter to remove Privacy data before process (there is alternative?)
+- See model OpenAI Privacy Filter to remove Privacy data before process (It is opensource)
 
 ## References
 
