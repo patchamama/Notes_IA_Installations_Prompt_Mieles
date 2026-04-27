@@ -83,6 +83,15 @@ npm install -g @google/gemini-cli # gemini
 brew install gemini-cli # gemini
 ```
 
+### Codex
+
+```sh
+npm i -g @openai/codex
+codex
+```
+
+[See Tokens](https://platform.openai.com/api-keys) | [Codex Cloud](https://chatgpt.com/codex/cloud) | [Models Pricing](https://openai.com/es-ES/api/pricing/)
+
 
 ### Install agents (gentle-ai agents and settings) See: https://github.com/Gentleman-Programming/gentle-ai
 
