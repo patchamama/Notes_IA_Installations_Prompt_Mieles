@@ -100,6 +100,17 @@ codex
 curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
 ```
 
+- Upgrade
+
+```sh
+brew upgrade gentle-ai
+brew upgrade engram
+
+engram setup opencode
+engram setup claude-code
+engram setup codex
+```
+
 ---
 
 ### iOS/Android App — Local Model Testing
