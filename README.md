@@ -86,6 +86,7 @@ brew install gemini-cli # gemini
 ### Codex
 
 ```sh
+winget install -e --id OpenJS.NodeJS
 npm i -g @openai/codex
 codex
 ```
