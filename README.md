@@ -109,6 +109,7 @@ curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/mai
 ```sh
 brew upgrade gentle-ai
 brew upgrade engram
+gentle-ai sync
 
 engram setup opencode
 engram setup claude-code
