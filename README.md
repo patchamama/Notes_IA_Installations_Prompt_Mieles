@@ -2,6 +2,14 @@
 
 ## Installation
 
+### Requeriments
+
+```sh
+# MacOSX
+brew install nvm
+nvm install --lts
+```
+
 ### Ollama
 
 ```sh
