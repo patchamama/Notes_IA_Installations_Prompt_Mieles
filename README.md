@@ -67,6 +67,23 @@ $env:CLAUDE_CODE_GIT_BASH_PATH="~\AppData\Local\Programs\Git\bin\bash.exe"
 echo $env:CLAUDE_CODE_GIT_BASH_PATH
 irm https://claude.ai/install.ps1 | iex
 ~\.local\bin\claude.exe
+
+
+# Agregar Git al PATH del sistema (requiere PowerShell como Administrador)
+$old = [System.Environment]::GetEnvironmentVariable("PATH","Machine")
+[System.Environment]::SetEnvironmentVariable("PATH", $old + ";C:\Program Files\Git\cmd", "Machine")
+
+# Agregar Claude al PATH del usuario
+$old = [System.Environment]::GetEnvironmentVariable("PATH","User")
+[System.Environment]::SetEnvironmentVariable("PATH", $old + ";C:\Users\Administrator\.local\bin", "User")
+
+# Refrescar PATH en la sesión actual
+$env:PATH = [System.Environment]::GetEnvironmentVariable("PATH","Machine") + ";" +
+[System.Environment]::GetEnvironmentVariable("PATH","User")
+
+# Verificar que funcionan
+git --version
+claude --version
 ```
 
 ### OpenCode
