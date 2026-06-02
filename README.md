@@ -52,12 +52,16 @@ ollama launch claude --config
 curl -fsSL https://claude.ai/install.sh | bash
 
 # Windows PS
-winget install --id Git.Git -e --source winget # Or download and install: https://github.com/git-for-windows/git/releases/download/v2.53.0.windows.3/Git-2.53.0.3-64-bit.exe
+winget install --id Git.Git -e --source winget
+
+# Or download and install: https://github.com/git-for-windows/git/releases/download/v2.53.0.windows.3/Git-2.53.0.3-64-bit.exe
   [System.Environment]::SetEnvironmentVariable(
   "CLAUDE_CODE_GIT_BASH_PATH",
   "~\AppData\Local\Programs\Git\bin\bash.exe",
   "User"
   )
+# or 
+$env:CLAUDE_CODE_GIT_BASH_PATH="C:\Program Files\Git\bin\bash.exe"
 # or
 $env:CLAUDE_CODE_GIT_BASH_PATH="~\AppData\Local\Programs\Git\bin\bash.exe"
 echo $env:CLAUDE_CODE_GIT_BASH_PATH
