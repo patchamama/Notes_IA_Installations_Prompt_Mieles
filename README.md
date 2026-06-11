@@ -136,6 +136,7 @@ curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/mai
 - Upgrade
 
 ```sh
+brew trust --formula gentleman-programming/tap/gentle-ai
 brew upgrade gentle-ai
 brew upgrade engram
 gentle-ai sync
