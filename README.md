@@ -183,6 +183,10 @@ headroom proxy --port 8787              # drop-in proxy, zero code changes
 
 # 3 — See the savings
 headroom perfroom perf
+
+# 4 - mines field sessions, writes corrections to CLAUDE.md / AGENTS.md
+
+headromm learn
 ```
 
 #### [Caveman: why use many tokens when few do trick](https://github.com/patchamama/caveman)
