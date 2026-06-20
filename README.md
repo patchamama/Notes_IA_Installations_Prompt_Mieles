@@ -166,7 +166,26 @@ curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/mai
 
 ### Token-Saving Mode
 
-- [Caveman: why use many tokens when few do trick](https://github.com/patchamama/caveman)
+
+#### [Headroom: The context compression layer for AI agents](https://github.com/chopratejas/headroom)
+
+Para usarlo con Claude Code:
+
+```sh
+# 1 — Install
+pip install "headroom-ai[all]"          # Python
+npm install headroom-ai                 # Node / TypeScript
+
+# 2 — Pick your mode
+headroom wrap claude                    # wrap a coding agent
+headroom proxy --port 8787              # drop-in proxy, zero code changes
+# or: from headroom import compress      # inline library
+
+# 3 — See the savings
+headroom perfroom perf
+```
+
+#### [Caveman: why use many tokens when few do trick](https://github.com/patchamama/caveman)
 
 ```sh
 claude plugin marketplace add JuliusBrussee/caveman && claude plugin install caveman@caveman
