@@ -124,6 +124,14 @@ powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1
 curl -fsSL https://chatgpt.com/codex/install.sh | sh
 # npm install -g @openai/codex
 
+# WSL Ubuntu
+sudo apt update
+sudo apt install -y bubblewrap ca-certificates
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+# Reiniciar el terminal
+codex login --device-auth
+
+
 # MacOSx Brew
 brew install --cask codex
 
