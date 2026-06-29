@@ -114,12 +114,18 @@ brew install gemini-cli # gemini
 
 ### Codex
 
+https://developers.openai.com/codex/cli
+
 ```sh
 # Windows
-winget install -e --id OpenJS.NodeJS 
+powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"
 
-# Linux & MacOS X
-npm i -g @openai/codex
+# Linux 
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+# npm install -g @openai/codex
+
+# MacOSx Brew
+brew install --cask codex
 
 codex
 ```
