@@ -220,6 +220,22 @@ claude plugin marketplace add JuliusBrussee/caveman && claude plugin install cav
 
 **Stop with:** `"stop caveman"` or `"normal mode"`
 
+### tmux multilínea
+
+sudo apt install tmux
+set -g mouse on
+set -g history-limit 50000
+tmux source-file ~/.tmux.conf
+tmux
+
+>  Ctrl+b c     nueva pestaña
+>  Ctrl+b %     dividir vertical
+>  Ctrl+b "     dividir horizontal
+>  Ctrl+b n     siguiente pestaña
+>  Ctrl+b d     desconectar sesión
+>  Ctrl+b [     MOdo scroll/copy ("q" sale del modo scroll)
+>  tmux attach  volver a conectarte
+
 ---
 
 ### Agent Assistants
