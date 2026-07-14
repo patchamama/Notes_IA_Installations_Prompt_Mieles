@@ -222,11 +222,13 @@ claude plugin marketplace add JuliusBrussee/caveman && claude plugin install cav
 
 ### tmux multilínea
 
+```sh
 sudo apt install tmux
 set -g mouse on
 set -g history-limit 50000
 tmux source-file ~/.tmux.conf
 tmux
+```
 
 >  Ctrl+b c     nueva pestaña
 >  Ctrl+b %     dividir vertical
