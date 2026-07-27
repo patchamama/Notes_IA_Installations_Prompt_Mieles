@@ -233,6 +233,8 @@ tmux
 >  Ctrl+b c     nueva pestaña
 >  Ctrl+b %     dividir vertical
 >  Ctrl+b "     dividir horizontal
+>    Ctrl+b  ← |  Ctrl+b  → | Ctrl+b  ↑ |  Ctrl+b  ↓
+>    Ctrl+b q (Ctrl+b #)
 >  Ctrl+b n     siguiente pestaña
 >  Ctrl+b d     desconectar sesión
 >  Ctrl+b [     MOdo scroll/copy ("q" sale del modo scroll)
