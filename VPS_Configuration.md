@@ -1,5 +1,8 @@
 # Server AI Production 24/7
 
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/0a02174b-fbc9-4e94-a687-949c88b8e18b" />
+
+
 Fuentes: 
 
 - https://www.youtube.com/watch?v=7qmu3QmEwpE
