@@ -1,4 +1,4 @@
-# VPS Configuration & Local Machine
+# AI en VPS or Local Machine, configuration
 
 Fuente: https://www.youtube.com/watch?v=7qmu3QmEwpE
 <p align="center">
