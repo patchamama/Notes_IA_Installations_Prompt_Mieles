@@ -128,3 +128,21 @@ sudo nano /etc/systemd/system/claude-remote.service
 
 <img width="80%" alt="image" src="https://github.com/user-attachments/assets/68359eb5-7a55-4e4d-9267-b8c3bea73475" />
 
+Asegurarse que el path de claude es correcto:
+
+```ssh
+which claude
+# /home/claude/.local/bin/claude
+```
+
+Reemplazar la línea:
+
+```
+ExecStart=/usr/bin/tmux new-session -d -s claude 'claude-remote'
+```
+
+por 
+
+```
+ExecStart=/usr/bin/tmux new-session -d -s claude '/home/claude/.local/bin/claude-remote'
+```
