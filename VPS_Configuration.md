@@ -1,6 +1,13 @@
 # VPS Configuration & Local Machine
 
 Fuente: https://www.youtube.com/watch?v=7qmu3QmEwpE
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=7qmu3QmEwpE">
+    <img src="https://img.youtube.com/vi/7qmu3QmEwpE/hqdefault.jpg"
+         alt="Ver vídeo en YouTube"
+         width="80%">
+  </a>
+</p>
 
 # Agregar sin usar root
 
