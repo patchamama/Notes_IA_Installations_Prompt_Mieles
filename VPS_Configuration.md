@@ -237,7 +237,7 @@ sudo systemctl status claude-remote
 
 - Sí se desea que la IA ejecute comandos sudo sin estar preguntando por la contraseña (`ssh dev@ip`):
 
-```ssh
+```bash
 echo 'dev ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/dev
 sudo chmod 0440 /etc/sudoers.d/dev
 ```
@@ -251,7 +251,7 @@ sudo chmod 0440 /etc/sudoers.d/dev
 
 - Reactivar la última sesión de `claude` abierta
 
-```ssh
+```bash
 claude -c
 ```
 
@@ -259,7 +259,7 @@ claude -c
 
 - Ver recursos del sistema de forma más elegante a usar `top`:
 
-```ssh
+```bash
 sudo apt install htop
 htop
 ```
