@@ -154,3 +154,6 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now claude-remote
 sudo systemctl status claude-remote
 ```
+
+> [!NOTE]
+> De esta forma, al reiniciarse el servidor, estará siempre levantándose de forma automática el `claude-remote` en `tmux` y accesible desde le móvil.
