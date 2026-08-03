@@ -25,13 +25,15 @@ Fuentes:
 # Agregar sin usar root
 
 ```ssh
-ssh root@patchamama.com
+ssh root@ip
 # Agregar usuario humano en el servidor
-adduser devadmin
-# Agregar usuario a grupo sudo y devadmin
-usermod -aG sudo devadmin
-id devadmin
+sudo adduser dev
+# Agregar usuario a grupo sudo y dev
+usermod -aG sudo dev
+id dev
 
+su - dev
+sudo whoami
 
 # Agregar usuario para ejecutar `claude` (claude, codex,...) sin permisos `sudo`
 adduser claude
@@ -41,16 +43,16 @@ adduser claude
 
 ```ssh
 # desde el terminal local y no el servidor
-ssh-copy-id devadmin@patchamama.com
-ssh-copy-id claude@patchamama.com
+ssh-copy-id dev@ip
+ssh-copy-id claude@ip
 ```
 
 ## Acceder desde la máquina local directamente
 
 ```ssh
 # desde el terminal local y no el servidor
-ssh devadmin@patchamama.com
-ssh claude@patchamama.com
+ssh dev@ip
+ssh claude@ip
 ```
 
 # Solo acceder con la clave ssh: Sí se desea desactivar el acceso del usuario `root`, deshabilitar el acceso con contraseña, se edita el archivo `nano /etc/ssh/sshd_config`:
@@ -99,7 +101,7 @@ sudo mkdir -p /home/claude/proyectos
 sudo chown -R claude:claude /home/claude/proyectos
 ```
 
-# Acceder al servidor como `claude` e instalar claude desde usuario `ssh@claude`
+# Acceder al servidor como `claude` e instalar claude desde usuario `claude@ip`
 
 ```ssh
 curl -fsSL https://claude.ai/install.sh | bash
@@ -112,7 +114,7 @@ claude
 > [!NOTE]
 > Dentro de `claude` ejecutar `/login` para iniciar la sesión.
 
-# Configurar cuenta de github desde `ssh@claude`
+# Configurar cuenta de github desde `claude@ip`
 
 ```ssh
 gh auth login
@@ -132,7 +134,7 @@ cat ~/.ssh/id_ed25519.pub
 
 Copiar contenido de la llave privada e insertar en cuenta de github > settings > SSH and GPG keys > Button "New SSH key", de esta forma se podrá clonar y trabajar con proyectos privados en github. 
 
-# Configurar cuenta de claude-remote desde `ssh@claude` 
+# Configurar cuenta de claude-remote desde `claude@ip` 
 
 Esto nos dará un código QR que nos permitiría conectarnos 
 
@@ -140,7 +142,7 @@ Esto nos dará un código QR que nos permitiría conectarnos
 claude remote-control
 ```
 
-# Crear sesión persistente con  `devadmin@ssh` 
+# Crear sesión persistente con  `dev@ssh` 
 
 ```ssh
 sudo nano /etc/systemd/system/claude-remote.service
@@ -177,3 +179,13 @@ sudo systemctl status claude-remote
 
 > [!NOTE]
 > De esta forma, al reiniciarse el servidor, estará siempre levantándose de forma automática el `claude-remote` en `tmux` y accesible desde le móvil.
+
+# TIPs que mejoran la interacción con Agentes/AI
+
+- Sí se desea que la IA ejecute comandos sudo sin estar preguntando por la contraseña (`ssh dev@ip`):
+
+```ssh
+echo 'dev ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/dev
+sudo chmod 0440 /etc/sudoers.d/dev
+```
+
