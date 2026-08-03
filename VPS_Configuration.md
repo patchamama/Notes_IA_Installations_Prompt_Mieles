@@ -236,10 +236,20 @@ echo 'dev ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/dev
 sudo chmod 0440 /etc/sudoers.d/dev
 ```
 
-# Activar control remoto desde dentro de claude
+- Activar control remoto desde dentro de claude
 
 ```
 /rc
 # o /remoto-control
 ``` 
+
+- Reactivar la última sesión de `claude` abierta
+
+```ssh
+claude -c
+```
+
+- Cerrar `tmux` y dejarlo en modo persistente (dtacht): `Ctrl + b + d`
+
+
 
