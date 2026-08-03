@@ -5,7 +5,7 @@ Fuente: https://www.youtube.com/watch?v=7qmu3QmEwpE
   <a href="https://www.youtube.com/watch?v=7qmu3QmEwpE">
     <img src="https://img.youtube.com/vi/7qmu3QmEwpE/hqdefault.jpg"
          alt="Ver vídeo en YouTube"
-         width="80%">
+         width="25%">
   </a>
 </p>
 
