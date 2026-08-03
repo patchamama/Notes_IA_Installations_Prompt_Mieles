@@ -229,7 +229,6 @@ set -g history-limit 50000
 tmux source-file ~/.tmux.conf
 tmux
 
-
 >  Ctrl+b c     nueva pestaña
 >  Ctrl+b %     dividir vertical
 >  Ctrl+b "     dividir horizontal
@@ -237,8 +236,13 @@ tmux
 >    Ctrl+b q (Ctrl+b #)
 >  Ctrl+b n     siguiente pestaña
 >  Ctrl+b d     desconectar sesión
->  Ctrl+b [     MOdo scroll/copy ("q" sale del modo scroll)
+>  Ctrl+b [     Modo scroll/copy ("q" sale del modo scroll)
+>  Ctrl+b d     Salir en modo detached (persistente), manteniéndose la sesión abierta
 >  tmux attach  volver a conectarte
+
+# listar sesiones
+tmux ls
+# tmux attach -t <sesion-name>
 ```
 ---
 
