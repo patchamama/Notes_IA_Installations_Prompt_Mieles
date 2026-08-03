@@ -175,6 +175,27 @@ sudo nano /etc/systemd/system/claude-remote.service
 
 <img width="80%" alt="image" src="https://github.com/user-attachments/assets/68359eb5-7a55-4e4d-9267-b8c3bea73475" />
 
+```ssh
+sudo tee /etc/systemd/system/claude-remote.service > /dev/null << 'EOF'
+[Unit]
+Description=Claude Code Remote Control
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+User=claude
+WorkingDirectory=/home/claude/proyectos
+ExecStart=/usr/bin/tmux new-session -d -s claude 'claude remote-control'
+ExecStop=/usr/bin/tmux kill-session -t claude
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
 Asegurarse que el path de claude es correcto:
 
 ```ssh
@@ -199,6 +220,7 @@ Reiniciar servicio
 ```ssh
 sudo systemctl daemon-reload
 sudo systemctl enable --now claude-remote
+sudo systemctl start claude-remote
 sudo systemctl status claude-remote
 ```
 
