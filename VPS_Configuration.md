@@ -27,7 +27,7 @@ Fuentes:
 
 # Agregar sin usar root
 
-```ssh
+```bash
 ssh root@ip
 # Agregar usuario humano en el servidor
 sudo adduser dev
@@ -44,7 +44,7 @@ adduser claude
 
 # Habilitar acceso desde la máquina local usando las claves ssh sin necesidad de introducir contraseña (desde el terminal local)
 
-```ssh
+```bash
 # desde el terminal local y no el servidor
 ssh-copy-id dev@ip
 ssh-copy-id claude@ip
@@ -52,7 +52,7 @@ ssh-copy-id claude@ip
 
 ## Acceder desde la máquina local directamente
 
-```ssh
+```bash
 # desde el terminal local y no el servidor
 ssh dev@ip
 ssh claude@ip
@@ -66,13 +66,13 @@ PasswordAuthentication no
 PubkeyAuthentication yes
 ```
 
-```ssh
+```bash
 systemctl restart ssh
 ```
 
 # Activar/configrar el Firewall (ufw: _uncomplicated firewall_ ). 
 
-```ssh
+```bash
 ufw --version
 # Bloquear por defecto todas las llamadas entrantes
 ufw default deny incoming
@@ -86,14 +86,14 @@ ufw status
 
 # Instalar la herramienta `fail2ban` para banear por defecto cualquier IP que intente conectarse
 
-```ssh
+```bash
 sudo app install fail2ban -y
 systemctl enable --now fail2ban
 ```
 
 # Instalar tmux y github cli para mantener las sesiones abiertas 
 
-```ssh
+```bash
 sudo apt install tmux gh -y
 tmux -V
 ```
@@ -103,7 +103,7 @@ tmux -V
 
 ### Configuración de `tmux`
 
-```ssh
+```bash
 cat > ~/.tmux.conf << 'EOF'
 # Increase scrollback buffer (default is 2000 lines)
 set -g history-limit 50000
@@ -127,14 +127,14 @@ EOF
 
 # Definir área de trabajo del agente de claude
 
-```ssh
+```bash
 sudo mkdir -p /home/claude/proyectos
 sudo chown -R claude:claude /home/claude/proyectos
 ```
 
 # Acceder al servidor como `claude` e instalar claude desde usuario `claude@ip`
 
-```ssh
+```bash
 curl -fsSL https://claude.ai/install.sh | bash
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
 claude --version
@@ -147,7 +147,7 @@ claude
 
 # Configurar cuenta de github desde `claude@ip`
 
-```ssh
+```bash
 gh auth login
 gh auth setup-git
 cd /home/claude/proyectos
@@ -156,7 +156,7 @@ git clone <proyecto>
 
 # Para que funcione el acceso al servidor automáticamente desde ssh a github
 
-```ssh
+```bash
 # Generar clave ssh del servidor 
 ssh-keygen -t ed25519 -C "patchamama.go@gmail.com" -f ~/.ssh/id_ed25519 -N ""
 # Mostrar contenido de la llave privada
@@ -169,19 +169,19 @@ Copiar contenido de la llave privada e insertar en cuenta de github > settings >
 
 Esto nos dará un código QR que nos permitiría conectarnos 
 
-```ssh
+```bash
 claude remote-control
 ```
 
 # Crear sesión persistente con  `dev@ssh` 
 
-```ssh
+```bash
 sudo nano /etc/systemd/system/claude-remote.service
 ```
 
 <img width="80%" alt="image" src="https://github.com/user-attachments/assets/68359eb5-7a55-4e4d-9267-b8c3bea73475" />
 
-```ssh
+```bash
 sudo tee /etc/systemd/system/claude-remote.service > /dev/null << 'EOF'
 [Unit]
 Description=Claude Code Remote Control
@@ -204,7 +204,7 @@ EOF
 
 Asegurarse que el path de claude es correcto:
 
-```ssh
+```bash
 which claude
 # /home/claude/.local/bin/claude
 ```
@@ -223,7 +223,7 @@ ExecStart=/usr/bin/tmux new-session -d -s claude '/home/claude/.local/bin/claude
 
 Reiniciar servicio
 
-```ssh
+```bash
 sudo systemctl daemon-reload
 sudo systemctl enable --now claude-remote
 sudo systemctl start claude-remote
