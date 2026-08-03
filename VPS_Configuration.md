@@ -138,11 +138,19 @@ which claude
 Reemplazar la línea:
 
 ```
-ExecStart=/usr/bin/tmux new-session -d -s claude 'claude-remote'
+ExecStart=/usr/bin/tmux new-session -d -s claude 'claude remote-control'
 ```
 
 por 
 
 ```
-ExecStart=/usr/bin/tmux new-session -d -s claude '/home/claude/.local/bin/claude-remote'
+ExecStart=/usr/bin/tmux new-session -d -s claude '/home/claude/.local/bin/claude remote-control'
+```
+
+Reiniciar servicio
+
+```ssh
+sudo systemctl daemon-reload
+sudo systemctl enable --now claude-remote
+sudo systemctl status claude-remote
 ```
