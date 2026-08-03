@@ -244,6 +244,31 @@ tmux
 tmux ls
 # tmux attach -t <sesion-name>
 ```
+
+### Configuración de `tmux`
+
+```bash
+cat > ~/.tmux.conf << 'EOF'
+# Increase scrollback buffer (default is 2000 lines)
+set -g history-limit 50000
+
+# Enable mouse support for scrolling and pane selection
+set -g mouse on
+
+# Start window numbering at 1
+set -g base-index 1
+
+# Reduce escape time for faster key response
+set -sg escape-time 10
+
+# Status bar with session name and time
+set -g status-right '%H:%M %d-%b'
+
+# Keep sessions alive if the shell exits unexpectedly
+set -g remain-on-exit on
+EOF
+```
+
 ---
 
 ### Agent Assistants
