@@ -179,7 +179,7 @@ claude remote-control
 sudo nano /etc/systemd/system/claude-remote.service
 ```
 
-<img width="80%" alt="image" src="https://github.com/user-attachments/assets/68359eb5-7a55-4e4d-9267-b8c3bea73475" />
+<img width="40%" alt="image" src="https://github.com/user-attachments/assets/68359eb5-7a55-4e4d-9267-b8c3bea73475" />
 
 ```bash
 sudo tee /etc/systemd/system/claude-remote.service > /dev/null << 'EOF'
