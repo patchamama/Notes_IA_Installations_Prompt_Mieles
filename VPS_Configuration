@@ -1,1 +1,38 @@
-# VPS Configuration
+# VPS Configuration & Local Machine
+
+# Agregar sin usar root
+
+```sh
+ssh root@patchamama.com
+# Agregar usuario humano en el servidor
+adduser devadmin
+# Agregar usuario a grupo sudo y devadmin
+usermod -aG sudo devadmin
+id devadmin
+
+
+# Agregar usuario para ejecutar `agent` (claude, codex,...) sin permisos `sudo`
+adduser agent
+```
+
+# Habilitar acceso desde la máquina local usando las claves ssh sin necesidad de introducir contraseña (desde el terminal local)
+
+```sh
+# desde el terminal local y no el servidor
+ssh-copy-id devadmin@patchamama.com
+ssh-copy-id agent@patchamama.com
+```
+
+## Acceder desde la máquina local directamente
+
+```sh
+# desde el terminal local y no el servidor
+ssh devadmin@patchamama.com
+ssh agent@patchamama.com
+```
+
+# Sí se desea desactivar el acceso del usuario `root`, deshabilitar el acceso con contraseña, se edita el archivo `/etc/ssh/sshd_config`
+
+
+
+
