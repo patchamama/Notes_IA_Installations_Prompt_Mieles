@@ -229,6 +229,9 @@ set -g history-limit 50000
 tmux source-file ~/.tmux.conf
 tmux
 
+tmux new-session -d -s claude 'claude remote-control'
+tmux kill-session -t claude
+
 >  Ctrl+b c     nueva pestaña
 >  Ctrl+b %     dividir vertical
 >  Ctrl+b "     dividir horizontal
