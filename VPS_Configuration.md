@@ -95,6 +95,9 @@ sudo apt install tmux gh -y
 tmux -V
 ```
 
+> [!NOTE]
+> Ver modo de instalación de cli-gh: https://cli.github.com/
+
 ### Configuración de `tmux`
 
 ```ssh
@@ -249,7 +252,11 @@ sudo chmod 0440 /etc/sudoers.d/dev
 claude -c
 ```
 
-- Cerrar `tmux` y dejarlo en modo persistente (dtacht): `Ctrl + b + d`
+- Cerrar `tmux` y dejarlo en modo persistente (detached): `Ctrl + b + d`
 
+- Ver recursos del sistema de forma más elegante a usar `top`:
 
-
+```ssh
+sudo apt install htop
+htop
+```
