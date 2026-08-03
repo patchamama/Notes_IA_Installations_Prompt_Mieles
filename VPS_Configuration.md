@@ -1,5 +1,7 @@
 # VPS Configuration & Local Machine
 
+Fuente: https://www.youtube.com/watch?v=7qmu3QmEwpE
+
 # Agregar sin usar root
 
 ```ssh
@@ -64,7 +66,7 @@ sudo app install fail2ban -y
 systemctl enable --now fail2ban
 ```
 
-# Instalar tmux y github cli para mantener las sesiones abiertas
+# Instalar tmux y github cli para mantener las sesiones abiertas 
 
 ```ssh
 sudo apt install tmux gh -y
@@ -77,13 +79,52 @@ sudo mkdir -p /home/claude/proyectos
 sudo chown -R claude:claude /home/claude/proyectos
 ```
 
-# Acceder al servidor como `claude` e instalar claude
+# Acceder al servidor como `claude` e instalar claude desde usuario `ssh@claude`
 
 ```ssh
 curl -fsSL https://claude.ai/install.sh | bash
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
 claude --version
 claude doctor
+claude
 ```
 
+> [!NOTE]
+> Dentro de `claude` ejecutar `/login` para iniciar la sesión.
+
+# Configurar cuenta de github desde `ssh@claude`
+
+```ssh
+gh auth login
+gh auth setup-git
+cd /home/claude/proyectos
+git clone <proyecto>
+```
+
+# Para que funcione el acceso al servidor automáticamente desde ssh a github
+
+```ssh
+# Generar clave ssh del servidor 
+ssh-keygen -t ed25519 -C "patchamama.go@gmail.com" -f ~/.ssh/id_ed25519 -N ""
+# Mostrar contenido de la llave privada
+cat ~/.ssh/id_ed25519.pub
+```
+
+Copiar contenido de la llave privada e insertar en cuenta de github > settings > SSH and GPG keys > Button "New SSH key", de esta forma se podrá clonar y trabajar con proyectos privados en github. 
+
+# Configurar cuenta de claude-remote desde `ssh@claude` 
+
+Esto nos dará un código QR que nos permitiría conectarnos 
+
+```ssh
+claude remote-control
+```
+
+# Crear sesión persistente con  `devadmin@ssh` 
+
+```ssh
+sudo nano /etc/systemd/system/claude-remote.service
+```
+
+<img width="80%" alt="image" src="https://github.com/user-attachments/assets/68359eb5-7a55-4e4d-9267-b8c3bea73475" />
 
