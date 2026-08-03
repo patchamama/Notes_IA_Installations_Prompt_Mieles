@@ -1,9 +1,22 @@
-# AI en VPS or Local Machine, configuration
+# Server AI Production 24/7
 
-Fuente: https://www.youtube.com/watch?v=7qmu3QmEwpE
+Fuentes: 
+
+- https://www.youtube.com/watch?v=7qmu3QmEwpE
+  
 <p align="center">
   <a href="https://www.youtube.com/watch?v=7qmu3QmEwpE">
     <img src="https://img.youtube.com/vi/7qmu3QmEwpE/hqdefault.jpg"
+         alt="Ver vídeo en YouTube"
+         width="25%">
+  </a>
+</p>
+
+- https://www.youtube.com/watch?v=BY8cl-cXf6I
+  
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=BY8cl-cXf6I">
+    <img src="https://img.youtube.com/vi/BY8cl-cXf6I/hqdefault.jpg"
          alt="Ver vídeo en YouTube"
          width="25%">
   </a>
