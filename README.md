@@ -288,6 +288,12 @@ EOF
 
 ---
 
+### Markdown for Agents
+
+https://markdown.new/
+
+---
+
 ### Semantic Search for Documents
 
 - [mgrep: A calm, CLI-native way to semantically grep everything — code, images, PDFs and more.](https://github.com/mixedbread-ai/mgrep)
