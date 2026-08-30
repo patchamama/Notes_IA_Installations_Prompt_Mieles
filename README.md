@@ -125,6 +125,14 @@ curl -fsSL https://chatgpt.com/codex/install.sh | sh
 # npm install -g @openai/codex
 
 # WSL Ubuntu
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+source ~/.bashrc
+nvm install 22
+nvm use 22
+nvm alias default 22
+npm install -g @openai/codex@latest
+
+
 sudo apt update
 sudo apt install -y bubblewrap ca-certificates
 curl -fsSL https://chatgpt.com/codex/install.sh | sh
