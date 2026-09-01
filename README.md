@@ -159,6 +159,15 @@ codex
 
 ### Install agents (gentle-ai agents and settings) See: https://github.com/Gentleman-Programming/gentle-ai
 
+#### Windows CMD
+
+```sh
+winget install --id GoLang.Go --exact
+go install github.com/gentleman-programming/gentle-ai/v2/cmd/gentle-ai@latest
+``` 
+
+#### Linux / MacOSx
+
 ```sh
 curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
 ```
