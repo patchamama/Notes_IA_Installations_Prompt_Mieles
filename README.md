@@ -51,6 +51,11 @@ ollama launch claude --config
 # Linux & MacOSX
 curl -fsSL https://claude.ai/install.sh | bash
 
+# Windows CMD
+
+curl.exe -fsSL https://claude.ai/install.cmd -o install.cmd && call install.cmd && del install.cmd
+$env:Path += ";$env:USERPROFILE\.local\bin"
+
 # Windows PS
 winget install --id Git.Git -e --source winget
 
