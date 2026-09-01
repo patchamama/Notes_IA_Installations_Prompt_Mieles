@@ -163,7 +163,13 @@ codex
 
 ```sh
 winget install --id GoLang.Go --exact
+
+set PATH "%PATH%;C:\Program Files\Go\bin;C:\Users\Administrator\go\bin"
+go version
 go install github.com/gentleman-programming/gentle-ai/v2/cmd/gentle-ai@latest
+
+# O
+& "C:\Users\Administrator\go\bin\gentle-ai.exe" 
 ``` 
 
 #### Linux / MacOSx
