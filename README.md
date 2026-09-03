@@ -55,7 +55,8 @@ curl -fsSL https://claude.ai/install.sh | bash
 
 curl.exe -fsSL https://claude.ai/install.cmd -o install.cmd && call install.cmd && del install.cmd
 $env:Path += ";$env:USERPROFILE\.local\bin"
-claude
+%USERPROFILE%\.local\bin\claude.exe
+# O claude.exe
 
 # Windows PS
 winget install --id Git.Git -e --source winget
