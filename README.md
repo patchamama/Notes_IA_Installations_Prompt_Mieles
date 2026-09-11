@@ -170,6 +170,16 @@ codex
 [See Tokens](https://platform.openai.com/api-keys) | [Codex Cloud](https://chatgpt.com/codex/cloud) | [Models Pricing](https://openai.com/es-ES/api/pricing/)
 
 
+### Install winget
+
+```sh
+$url = 'https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle'
+$file = "$env:TEMP\Microsoft.DesktopAppInstaller.msixbundle"
+Invoke-WebRequest $url -OutFile $file
+Add-AppxPackage -Path $file
+winget --version
+```
+
 ### Install agents (gentle-ai agents and settings) See: https://github.com/Gentleman-Programming/gentle-ai
 
 #### Windows CMD
