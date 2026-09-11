@@ -53,10 +53,16 @@ curl -fsSL https://claude.ai/install.sh | bash
 
 # Windows CMD
 
-curl.exe -fsSL https://claude.ai/install.cmd -o install.cmd && call install.cmd && del install.cmd
+curl.exe -fsSL https://claude.ai/install.cmd -o install.cmd 
+./install.cmd 
+del install.cmd
 $env:Path += ";$env:USERPROFILE\.local\bin"
 %USERPROFILE%\.local\bin\claude.exe
 # O claude.exe
+
+# Agregar codex y claude al path
+[Environment]::SetEnvironmentVariable('Path', ([Environment]::GetEnvironmentVariable('Path','User') + ';' +
+  $env:USERPROFILE + '\.local\bin;' + $env:USERPROFILE + '\AppData\Local\Programs\OpenAI\Codex\bin'), 'User')
 
 # Windows PS
 winget install --id Git.Git -e --source winget
@@ -126,6 +132,11 @@ https://developers.openai.com/codex/cli
 ```sh
 # Windows
 powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"
+.\AppData\Local\Programs\OpenAI\Codex\bin\codex.exe
+
+# Agregar codex y claude al path
+[Environment]::SetEnvironmentVariable('Path', ([Environment]::GetEnvironmentVariable('Path','User') + ';' +
+  $env:USERPROFILE + '\.local\bin;' + $env:USERPROFILE + '\AppData\Local\Programs\OpenAI\Codex\bin'), 'User')
 
 # Linux 
 curl -fsSL https://chatgpt.com/codex/install.sh | sh
