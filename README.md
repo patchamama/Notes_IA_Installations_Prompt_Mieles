@@ -167,6 +167,15 @@ brew install --cask codex
 codex
 ```
 
+#### Instrucciones para que no pregunte tanto
+
+> Work autonomously until the task is complete.
+> Do not ask me for confirmation between steps.
+> Make reasonable implementation decisions yourself.
+> Run the relevant tests and fix errors you encounter.
+> Only stop if you are genuinely blocked or need information
+> that cannot be inferred from the project.
+
 [See Tokens](https://platform.openai.com/api-keys) | [Codex Cloud](https://chatgpt.com/codex/cloud) | [Models Pricing](https://openai.com/es-ES/api/pricing/)
 
 
