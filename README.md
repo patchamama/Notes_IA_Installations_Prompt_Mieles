@@ -165,6 +165,9 @@ codex login --device-auth
 brew install --cask codex
 
 codex
+
+# Codex sin preguntar tanto
+codex --sandbox workspace-write --ask-for-approval never
 ```
 
 #### Instrucciones para que no pregunte tanto
