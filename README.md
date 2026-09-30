@@ -66,6 +66,15 @@ $env:Path += ";$env:USERPROFILE\.local\bin"
 
 # Windows PS
 winget install --id Git.Git -e --source winget
+# ó
+$ProgressPreference = 'SilentlyContinue'
+$rel = Invoke-RestMethod https://api.github.com/repos/git-for-windows/git/releases/latest
+$a   = $rel.assets | Where-Object name -match '^Git-.*-64-bit\.exe$' | Select-Object -First 1
+$out = Join-Path $env:TEMP $a.name
+Invoke-WebRequest $a.browser_download_url -OutFile $out
+# Verificar firma (debe decir Valid)
+(Get-AuthenticodeSignature $out).Status
+Start-Process $out -Wait -ArgumentList '/VERYSILENT','/NORESTART','/NOCANCEL','/SP-','/ALLUSERS'
 
 # Or download and install: https://github.com/git-for-windows/git/releases/download/v2.53.0.windows.3/Git-2.53.0.3-64-bit.exe
   [System.Environment]::SetEnvironmentVariable(
@@ -198,6 +207,15 @@ winget --version
 
 ```sh
 winget install --id GoLang.Go --exact
+# o
+$ProgressPreference = 'SilentlyContinue'
+$r   = Invoke-RestMethod 'https://go.dev/dl/?mode=json'
+$f   = $r[0].files | Where-Object { $_.os -eq 'windows' -and $_.arch -eq 'amd64' -and $_.kind -eq 'installer' }
+$out = Join-Path $env:TEMP $f.filename
+Invoke-WebRequest "https://go.dev/dl/$($f.filename)" -OutFile $out
+# Verificar checksum (debe dar True)
+(Get-FileHash $out -Algorithm SHA256).Hash -eq $f.sha256
+Start-Process msiexec.exe -Wait -ArgumentLisestart'
 
 set PATH "%PATH%;C:\Program Files\Go\bin;C:\Users\Administrator\go\bin"
 go version
