@@ -45,6 +45,16 @@ ollama launch claude --config
 
 - Fuente: https://github.com/ggml-org/llama.cpp
 
+### Install PI
+
+- Fuente: https://pi.dev/docs/latest/quickstart
+
+```sh
+curl -fsSL https://pi.dev/install.sh | sh
+# npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+pi --version
+```
+
 ### Claude Code
 
 ```sh
