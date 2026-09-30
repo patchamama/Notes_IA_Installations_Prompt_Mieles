@@ -229,7 +229,7 @@ Start-Process msiexec.exe -Wait -ArgumentLisestart'
 
 set PATH "%PATH%;C:\Program Files\Go\bin;C:\Users\Administrator\go\bin"
 go version
-go install github.com/gentleman-programming/gentle-ai/v2/cmd/gentle-ai@latest
+go install github.com/gentleman-programming/gentle-ai/v3/cmd/gentle-ai@latest
 
 # O
 & "C:\Users\Administrator\go\bin\gentle-ai.exe" 
