@@ -186,7 +186,7 @@ brew install --cask codex
 codex
 
 # Codex sin preguntar tanto
-codex --sandbox workspace-write --ask-for-approval never
+codex --sandbox workspace-write --ask-for-approval never --no-daemon
 ```
 
 #### Instrucciones para que no pregunte tanto
