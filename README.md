@@ -122,6 +122,9 @@ claude --version
 
 Para activarlo hay que añadir esto en ~/.claude/settings.json, justo antes de "outputStyle". Esa edición me la bloqueó el clasificador, así que tienes que pegarla tú:
 
+<details>
+  <summary>Activar status line</summary>
+
 ```json
 "statusLine": {
   "type": "command",
@@ -203,6 +206,8 @@ if ($bg) { $parts += $bg }
 
 [Console]::Out.Write(($parts -join ' | '))
 ```
+</details>
+
 
 ### OpenCode
 
