@@ -118,6 +118,92 @@ git --version
 claude --version
 ```
 
+##### Agregar status en la barra de estado 
+
+Para activarlo hay que añadir esto en ~/.claude/settings.json, justo antes de "outputStyle". Esa edición me la bloqueó el clasificador, así que tienes que pegarla tú:
+
+```json
+"statusLine": {
+  "type": "command",
+  "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/eloadmin/.claude/statusline.ps1"
+},
+```
+
+statusline.ps1
+
+```ps1
+$ErrorActionPreference = 'SilentlyContinue'
+$raw = [Console]::In.ReadToEnd()
+$j = $raw | ConvertFrom-Json
+
+function Remaining($epoch) {
+  if (-not $epoch) { return '?' }
+  $span = [DateTimeOffset]::FromUnixTimeSeconds([int64]$epoch) - [DateTimeOffset]::UtcNow
+  if ($span.TotalSeconds -le 0) { return 'now' }
+  if ($span.TotalHours -ge 24) { return ('{0}d{1}h' -f [int]$span.Days, $span.Hours) }
+  if ($span.TotalHours -ge 1) { return ('{0}h{1:00}m' -f [int]$span.TotalHours, $span.Minutes) }
+  return ('{0}m' -f [int][math]::Ceiling($span.TotalMinutes))
+}
+
+# Background tasks (shell commands, tests, subagents): the status line input does not list them, so they
+# are read from the tail of the session transcript - launches versus completion notifications.
+function BackgroundTasks($path) {
+  if (-not $path -or -not (Test-Path -LiteralPath $path)) { return $null }
+  $fs = [System.IO.File]::Open($path, 'Open', 'Read', 'ReadWrite')
+  try {
+    $window = 800KB
+    if ($fs.Length -gt $window) { $fs.Seek(-$window, 'End') | Out-Null }
+    $text = (New-Object System.IO.StreamReader($fs, [Text.Encoding]::UTF8)).ReadToEnd()
+  } finally { $fs.Dispose() }
+
+  $started = [ordered]@{}
+  foreach ($m in [regex]::Matches($text, 'running in background with ID: ([A-Za-z0-9_-]+)|agentId: ([A-Za-z0-9_-]+)')) {
+    $id = if ($m.Groups[1].Success) { $m.Groups[1].Value } else { $m.Groups[2].Value }
+    $started[$id] = $true
+  }
+  $done = @{}
+  $last = $null
+  foreach ($m in [regex]::Matches($text, 'task-id>([A-Za-z0-9_-]+)</task-id>.{0,600}?<status>(\w+)</status>(?:.{0,400}?<summary>(.*?)</summary>)?')) {
+    $done[$m.Groups[1].Value] = $m.Groups[2].Value
+    $last = @{ status = $m.Groups[2].Value; summary = $m.Groups[3].Value }
+  }
+  $running = @($started.Keys | Where-Object { -not $done.ContainsKey($_) }).Count
+
+  $parts = @()
+  if ($running -gt 0) { $parts += ('bg {0} running' -f $running) }
+  if ($last) {
+    $kind = if ($last.summary -match 'pytest|\btests?\b') { 'tests' } else { 'task' }
+    $exit = if ($last.summary -match 'exit code (\d+)') { ' (exit ' + $Matches[1] + ')' } else { '' }
+    $icon = switch ($last.status) { 'completed' { 'OK' } 'failed' { 'FAIL' } 'killed' { 'KILLED' } default { $last.status } }
+    $parts += ('last {0}: {1}{2}' -f $kind, $icon, $exit)
+  }
+  if ($parts.Count -eq 0) { return $null }
+  return ($parts -join ', ')
+}
+
+$parts = @()
+if ($j.model.display_name) { $parts += $j.model.display_name }
+if ($j.workspace.current_dir) { $parts += (Split-Path -Leaf $j.workspace.current_dir) }
+
+$cw = $j.context_window
+if ($cw -and $null -ne $cw.used_percentage) {
+  $size = [int]$cw.context_window_size
+  $used = [int]([double]$cw.used_percentage / 100 * $size)
+  $parts += ('ctx {0}% ({1}k/{2}k tok)' -f [int]$cw.used_percentage, [int]($used / 1000), [int]($size / 1000))
+}
+
+$rl = $j.rate_limits
+if ($rl) {
+  if ($rl.five_hour) { $parts += ('5h {0}% reset {1}' -f [int]$rl.five_hour.used_percentage, (Remaining $rl.five_hour.resets_at)) }
+  if ($rl.seven_day) { $parts += ('7d {0}% reset {1}' -f [int]$rl.seven_day.used_percentage, (Remaining $rl.seven_day.resets_at)) }
+}
+
+$bg = BackgroundTasks $j.transcript_path
+if ($bg) { $parts += $bg }
+
+[Console]::Out.Write(($parts -join ' | '))
+```
+
 ### OpenCode
 
 
