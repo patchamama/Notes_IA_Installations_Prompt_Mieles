@@ -1,5 +1,6 @@
 # YouTube references
 
+NotebookLLM: https://notebook.google.com/notebook/73adc862-1890-4184-b881-f71598f51dd8
 
 - ¿Bases Matemáticas de inteligencia artificial? (Platzi)
 https://www.youtube.com/watch?v=v6tk0CxaVU8 | 
