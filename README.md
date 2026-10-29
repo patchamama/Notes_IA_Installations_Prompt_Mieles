@@ -1,5 +1,7 @@
 # AI Tools & Installations
 
+- [Docu + Videos + Info](https://github.com/patchamama/Notes_IA_Installations_Prompt_Mieles/blob/main/docs/charlas_videos_docu.md)
+
 ## Installation
 
 ### Requeriments
