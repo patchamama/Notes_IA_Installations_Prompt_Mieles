@@ -2,9 +2,9 @@
 
 
 - ¿Bases Matemáticas de inteligencia artificial? (Platzi)
-https://www.youtube.com/watch?v=v6tk0CxaVU8
-https://www.youtube.com/watch?v=5XnJSTyw6PA
-https://www.youtube.com/watch?v=FyeHZH2jeOk
+https://www.youtube.com/watch?v=v6tk0CxaVU8 | 
+https://www.youtube.com/watch?v=5XnJSTyw6PA | 
+https://www.youtube.com/watch?v=FyeHZH2jeOk | 
 
 Historia de IA/LLMs y explicación
 https://www.youtube.com/@DotCSV/videos
@@ -31,7 +31,7 @@ https://www.youtube.com/watch?v=V8j1oENVz00
 ### Harness Engineering
 
 - ¿Qué es esto del Harness Engineering? (bettaTech & Fazt)
-https://www.youtube.com/watch?v=q9Vaoz0hd0U
+https://www.youtube.com/watch?v=q9Vaoz0hd0U | 
 https://www.youtube.com/watch?v=DOgIFhpndW0
 
 ### SDD y ODD
